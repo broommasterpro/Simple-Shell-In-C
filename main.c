@@ -103,17 +103,23 @@ int lsh_launch(char **args)
 //Declare built-in functions with forward declarations
 
 int lsh_cd(char **args);
+int lsh_pwd(char **args);
+int lsh_echo(char **args);
 int lsh_help(char **args);
 int lsh_exit(char **args);
 
 char *builtin_str[] = {
   "cd",
+  "pwd",
+  "echo",
   "help",
   "exit"
 };
 
 int (*builtin_func[]) (char **) = {
   &lsh_cd,
+  &lsh_pwd,
+  &lsh_echo,
   &lsh_help,
   &lsh_exit
 };
@@ -132,6 +138,34 @@ int lsh_cd(char **args)
     }
   }
   return 1;
+}
+
+int lsh_pwd(char **args)
+{
+    if(args[1] != NULL) {
+        fprintf(stderr, "lsh: expected no argument to \"pwd\"\n");
+    } else {
+        char pwd_buffer[1024];
+        if(getcwd(pwd_buffer, sizeof(pwd_buffer)) != NULL) {
+            printf("%s\n", pwd_buffer);
+        } else {
+            perror("lsh");
+        }
+    }
+    return 1;
+}
+
+int lsh_echo(char **args) {
+    if(args[1] == NULL) {
+        fprintf(stderr, "lsh: expected argument to \"echo\" \n");
+    } else {
+        //char echo_buffer[1024];
+        for (int i = 1; args[i] != NULL; i++) {
+            printf("%s", args[i]);
+            if (args[i+1] != NULL) printf("%s", " ");
+        }
+    }
+    return 1;
 }
 
 int lsh_help(char **args)
