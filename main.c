@@ -159,7 +159,6 @@ int lsh_echo(char **args) {
     if(args[1] == NULL) {
         fprintf(stderr, "lsh: expected argument to \"echo\" \n");
     } else {
-        //char echo_buffer[1024];
         for (int i = 1; args[i] != NULL; i++) {
             printf("%s", args[i]);
             if (args[i+1] != NULL) printf("%s", " ");
