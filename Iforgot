@@ -1,0 +1,107 @@
+#!/bin/bash
+
+if [ -z "$1" ]; then
+  echo "Usage: Iforgot <action>"
+  exit 1
+fi
+
+action="$1"
+echo "How can I $action?"
+
+case "$action" in
+  rename)
+    echo "1. mv original_name new_name"
+    ;;
+  copy)
+    echo "1. cp original_file copied_file"
+    echo "2. cp -r original_dir copied_dir"
+    ;;
+  delete)
+    echo "1. rm file_to_delete"
+    echo "2. rm -r directory_to_delete"
+    echo "3. rm -f force_delete_file"
+    ;;
+  move)
+    echo "1. mv file_name destination_path"
+    ;;
+  compress)
+    echo "1. tar -czvf archive_name.tar.gz folder_to_compress"
+    echo "2. zip -r archive_name.zip folder_to_compress"
+    ;;
+  extract)
+    echo "1. tar -xzvf archive_name.tar.gz"
+    echo "2. unzip archive_name.zip"
+    ;;
+  search)
+    echo "1. grep -r \"search_term\" directory"
+    echo "2. find . -name \"filename\""
+    ;;
+  find)
+    echo "1. find . -name \"filename\""
+    echo "2. find . -type d -name \"dirname\""
+    ;;
+  view)
+    echo "1. cat file_name"
+    echo "2. less file_name"
+    echo "3. head file_name"
+    echo "4. tail file_name"
+    ;;
+  edit)
+    echo "1. nano file_name"
+    echo "2. vim file_name"
+    ;;
+  create)
+    echo "1. touch new_file"
+    echo "2. mkdir new_directory"
+    ;;
+  list)
+    echo "1. ls"
+    echo "2. ls -l"
+    echo "3. ls -a"
+    ;;
+  permissions)
+    echo "1. chmod +x file_name"
+    echo "2. chmod 755 file_name"
+    echo "3. chown user:group file_name"
+    ;;
+  download)
+    echo "1. wget url"
+    echo "2. curl -O url"
+    ;;
+  count)
+    echo "1. wc -l file_name"
+    echo "2. wc -w file_name"
+    ;;
+  compare)
+    echo "1. diff file_one file_two"
+    echo "2. cmp file_one file_two"
+    ;;
+  link)
+    echo "1. ln -s target_file link_name"
+    ;;
+  disk)
+    echo "1. df -h"
+    echo "2. du -sh directory"
+    ;;
+  kill)
+    echo "1. kill process_id"
+    echo "2. kill -9 process_id"
+    echo "3. pkill process_name"
+    ;;
+  processes)
+    echo "1. ps aux"
+    echo "2. top"
+    ;;
+  network)
+    echo "1. ping hostname"
+    echo "2. curl url"
+    echo "3. ifconfig"
+    ;;
+  history)
+    echo "1. history"
+    ;;
+  *)
+    echo "No sample commands found for \"$action\"."
+    echo "Try: rename, copy, delete, move, compress, extract, search, find, view, edit, create, list, permissions, download, count, compare, link, disk, kill, processes, network, history"
+    ;;
+esac
