@@ -69,26 +69,10 @@ Run external programs:
 > cat file.txt
 ```
 
-## Iforgot Helper
+## Iforgot
  
-`Iforgot` is a standalone bash script, not a built-in command. The shell finds and runs it the same way it runs `ls` or `cat`: through `execvp()`, which searches your `$PATH` for a matching executable. No C code changes are required to use it.
- 
-### Setup
- 
-1. Make the script executable:
-```bash
-   chmod +x Iforgot
-```
- 
-2. Put it on your `$PATH`, either temporarily for the current terminal session:
-```bash
-   export PATH="$PATH:$(pwd)"
-```
-   or permanently for every session:
-```bash
-   sudo cp Iforgot /usr/local/bin/
-```
- 
+'Iforgot' is a helper tool meant for when you can't exactly remember what command to use or how to use a particular command and don't have the energy to go through the man page. 
+
 ### Example
  
 ```text
@@ -103,4 +87,4 @@ How can I delete?
 3. rm -f force_delete_file
 ```
  
-Supported actions: `rename`, `copy`, `delete`, `move`, `compress`, `extract`, `search`, `find`, `view`, `edit`, `create`, `list`, `permissions`, `download`, `count`, `compare`, `link`, `disk`, `kill`, `processes`, `network`, `history`. An unrecognized action prints the full list above instead of a crash.
+Supported actions: `rename`, `copy`, `delete`, `move`, `compress`, `extract`, `search`, `find`, `view`, `edit`, `create`, `list`, `permissions`, `download`, `count`, `compare`, `link`, `disk`, `kill`, `processes`, `network`, `history`. I plan on adding more commands in the future `:)`
