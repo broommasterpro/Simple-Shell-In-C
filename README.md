@@ -87,4 +87,5 @@ How can I delete?
 3. rm -f force_delete_file
 ```
  
-Supported actions: `rename`, `copy`, `delete`, `move`, `compress`, `extract`, `search`, `find`, `view`, `edit`, `create`, `list`, `permissions`, `download`, `count`, `compare`, `link`, `disk`, `kill`, `processes`, `network`, `history`. I plan on adding more commands in the future `:)`
+Supported actions: `rename`, `copy`, `delete`, `move`, `compress`, `extract`, `search`, `find`, `view`, `edit`, `create`, `list`, `permissions`, `download`, `count`, `compare`, `link`, `disk`, `kill`, `processes`, `network`, `history`. 
+I plan on adding more commands in the future `:)`
